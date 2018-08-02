@@ -1,5 +1,5 @@
 {
-  "name": "pre-commit-eslint",
+  "name": "pre-commit-eslint-fix",
   "version": "0.0.1",
   "description": "提交前eslint",
   "main": "index.js",
