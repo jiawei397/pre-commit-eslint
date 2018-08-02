@@ -35,14 +35,18 @@ var lint = function (path) {
         return eslintFun(eslintArr);
       }
     })
-    .catch(function (err) {
+    .then(function () {
+      return 'ok';
+    }, function (err) {
       console.warn(errTip);
       console.log('\x1B', err);//输出eslint错误信息
       return eslintFixFun(eslintArr);
     })
-    .then(function () {
-      console.warn(errTip3);
-      return Promise.reject(errTip3);
+    .then(function (result) {
+      if (result !== 'ok') {
+        console.warn(errTip3);
+        return Promise.reject(errTip3);
+      }
     }, function (err) {
       console.error(errTip2);
       console.log('\x1B', err);//输出eslint错误信息
