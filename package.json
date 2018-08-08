@@ -1,6 +1,6 @@
 {
   "name": "pre-commit-eslint-fix",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "提交前eslint",
   "main": "index.js",
   "scripts": {
