@@ -37,6 +37,12 @@ var lint = function (path) {
       if (stdout) {
         eslintArr = stdout.split('\n');
         eslintArr.pop();
+        eslintArr = eslintArr.filter(function (value) {
+          return value.endsWith('.js');
+        });
+        if (eslintArr.length === 0) {
+          return Promise.resolve();
+        }
         return eslintFun(eslintArr);
       }
     })
